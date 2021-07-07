@@ -5,7 +5,7 @@ const Task = use('App/Models/Task');
 class TaskController {
 
   async index({ params }) {
-    const tasks = await Task.query().where('project_id', params.project_id).with('user').fetch();
+    const tasks = await Task.query().where('project_id', params.projects_id).with('user').fetch();
 
     return tasks;
   }
